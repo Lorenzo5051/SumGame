@@ -20,7 +20,7 @@ useEffect(() => {
   const numbers = Array.from({ length : randomNumbersCount}).map(() => 1 + Math.floor(10 * Math.random()));
   const target = numbers.slice(0, randomNumbersCount -2).reduce( (acc, cur) => acc + cur,0);
   
-  setRandomNumbers(numbers);
+  setRandomNumbers(numbers.sort((a, b) => 0.5 - Math.random()));
   setTarget(target);
   
   intervalId.current = setInterval(() => {setRemainingSeconds(seconds => seconds -1 )},1000);
